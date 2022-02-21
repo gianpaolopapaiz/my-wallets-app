@@ -52,7 +52,7 @@ gem 'sassc-rails'
 
 # Additional gems
 # Authentication
-gem 'device'
+gem 'devise'
 # Authorization
 gem 'pundit'
 # Views
