@@ -1,0 +1,54 @@
+body {
+  min-height: 100vh;
+}
+
+.default-page-wrapper {
+  padding: 15px;
+}
+
+.default-border-radius {
+  border-radius: 10px;
+}
+
+.main-box-shadow {
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+}
+
+.add-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  row-gap: 10px;
+  flex-wrap: wrap;
+}
+
+.action-column {
+  display: flex;
+  column-gap: 20px;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+
+.positive-number {
+  color: green;
+}
+
+.negative-number {
+  color: red;
+}
+
+.form-date {
+  background-color: #F4F4F4;
+  border: 1px solid #ced4da;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  &:focus {
+    box-shadow: 0 0 0 0.25rem rgba(0, 128, 0, 0.25);
+    outline: 0;
+    border-color: #80c080
+  }
+}
+
+.text-right {
+  text-align: right;
+}
