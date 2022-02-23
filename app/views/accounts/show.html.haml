@@ -58,7 +58,7 @@
             = render 'transactions/transaction_row', transaction: transaction
         - else
           %tr
-            %td.text-center{colspan: 7} (There are no transactions for this selection.)
+            %td.text-center{colspan: 9} (There are no transactions for this selection.)
 
   %div.wallet-md
     - if @transactions.present?
