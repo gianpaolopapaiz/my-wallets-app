@@ -3,10 +3,15 @@
 body {
   font-family: "Work Sans", "Helvetica", "sans-serif";
   min-height: 100vh;
+  background-color: beige;
 }
 
 h1, h2, h3, h4, h5, h6, th {
   font-family: "Nunito", "Helvetica", "sans-serif";
+}
+
+select, input, .btn, .accordion-header {
+  border-radius: 10px !important;
 }
 
 .default-page-wrapper {
