@@ -7,7 +7,7 @@
          "data-bs-toggle": "collapse",
          type: "button",
          class: "wallet-accordion-button"}
-        %i.fa.fa-plus{style: 'color:green'}
+        %i.bi.bi-caret-down-fill{style: 'color:green'}
 
   %th{ scope: 'row' }
     = category.name
@@ -15,7 +15,7 @@
     = category.description
   %td
     .action-column
-      = link_to '', new_category_subcategory_path(category), class: 'far fa-folder-open text-decoration-none',
+      = link_to '', new_category_subcategory_path(category), class: 'bi bi-folder-fill text-decoration-none',
                                                              title: 'Add Subcategory'
       = link_to '', edit_category_path(category), class: 'bi bi-pencil-fill',
                                                   title: 'Edit Category'
