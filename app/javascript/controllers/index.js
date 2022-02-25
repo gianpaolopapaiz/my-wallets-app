@@ -4,5 +4,9 @@
 
 import { application } from "./application"
 
+// Rails Example
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import MainController from "./main_controller"
+application.register("main", MainController)
