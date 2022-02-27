@@ -1,10 +1,10 @@
 - if notice
-  .alert.alert-info.alert-dismissible.fade.show.m-1{role: "alert"}
-    %button.close{"aria-label": "Close", "data-bs-dismiss": "alert", type: "button"}
-      %span{"aria-hidden": "true"} ×
+  %div.alert.alert-success.wallet-alert{role: "alert"}
     = notice
-- if alert
-  .alert.alert-warning.alert-dismissible.fade.show.m-1{role: "alert"}
-    %button.close{"aria-label": "Close", "data-bs-dismiss": "alert", type: "button"}
+    %a.close{"aria-label": "Close", "data-bs-dismiss": "alert", type: "button"}
       %span{"aria-hidden": "true"} ×
+- if alert
+  %div.alert.alert-warning.wallet-alert{role: "alert"}
     = alert
+    %a.close{"aria-label": "Close", "data-bs-dismiss": "alert", type: "button"}
+      %span{"aria-hidden": "true"} ×
