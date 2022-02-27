@@ -6,8 +6,7 @@
 .form-wrapper
   .main-form
     %h4 Transaction
-    -# simple_form_models: new = [@account, @transaction] | edit = [@transaction]
-    = simple_form_for @simple_form_models do |f|
+    = simple_form_for @simple_form_models, data: { turbo: false } do |f|
       = f.input :date
       = f.input :name
       = f.input :description
