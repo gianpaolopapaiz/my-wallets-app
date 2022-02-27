@@ -42,7 +42,7 @@ class SubcategoriesController < ApplicationController
 
   def destroy
     @subcategory.destroy
-    redirect_to categories_path
+    redirect_to categories_path, status: :see_other
   end
 
   private

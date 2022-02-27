@@ -40,9 +40,10 @@ class TransactionsController < ApplicationController
 
   def destroy
     if @transaction.destroy
-      redirect_to account_path(@account)
+      redirect_to account_path(@account), status: :see_other
     else
-      redirect_to account_path(@account), alert: 'Something went wrong!'
+      redirect_to account_path(@account), status: :see_other,
+                                          alert: 'Something went wrong!'
     end
   end
 
