@@ -4,7 +4,7 @@
 
 -if @categories.present?
   .bg-white.main-box-shadow.default-border-radius.p-3
-    %table.table
+    %table.table{'data-controller': 'accordion_icon'}
       %thead
         %tr
           %th{ scope: 'col', style: 'width: 30px' }

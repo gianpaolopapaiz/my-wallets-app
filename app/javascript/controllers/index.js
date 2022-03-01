@@ -8,5 +8,8 @@ import { application } from "./application"
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-import MainController from "./main_controller"
-application.register("main", MainController)
+import DynamicSubcategoryController from "./dynamic_subcategory_controller"
+application.register("dynamic_subcategory", DynamicSubcategoryController)
+
+import AccordionIconController from "./accordion_icon_controller"
+application.register("accordion_icon", AccordionIconController)

@@ -3,7 +3,7 @@
     display: none;
   }
 
-.form-wrapper
+.form-wrapper{'data-controller':'dynamic_subcategory'}
   .main-form
     %h4 Transaction
     = simple_form_for @simple_form_models, data: { turbo: false } do |f|
