@@ -1,12 +1,14 @@
-#filterAccordion.accordion
-  .accordion-item
-    %h5#headingOne.accordion-header
-      %button.accordion-button{"aria-controls": "collapseOne",
-                                   "aria-expanded": "true",
-                                   "data-bs-target": "#collapseOne",
-                                   "data-bs-toggle": "collapse",
-                                   type: "button"}
-        = header_title
+#filterAccordion{'data-controller': 'accordion_icon'}
+  .wallet-accordion-item
+    %a#headingOne.wallet-accordion-header{"aria-controls": "collapseOne",
+                                          "aria-expanded": "true",
+                                          "data-bs-target": "#collapseOne",
+                                          "data-bs-toggle": "collapse",
+                                          type: "button",
+                                          class: "wallet-accordion-button"}
+
+      = header_title
+      %i.bi.bi-caret-down-fill
     #collapseOne.accordion-collapse.collapse{"aria-labelledby": "headingOne",
                                                  "data-bs-parent": "#filterAccordion"}
       .accordion-body
