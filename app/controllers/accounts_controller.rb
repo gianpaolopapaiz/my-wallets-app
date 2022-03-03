@@ -17,23 +17,28 @@ class AccountsController < ApplicationController
   def new
     @account = current_user.accounts.new
     authorize @account
+    @submit_text = 'Create'
   end
 
   def create
     @account = current_user.accounts.new(accounts_params)
     authorize @account
     if @account.save
-      redirect_to accounts_path
+      redirect_to(accounts_path,
+                  notice: 'Account was successfully created.')
     else
       render :new
     end
   end
 
-  def edit; end
+  def edit
+    @submit_text = 'Update'
+  end
 
   def update
     if @account.update(accounts_params)
-      redirect_to accounts_path
+      redirect_to(accounts_path,
+                  notice: 'Account was successfully updated.')
     else
       render :edit
     end

@@ -1,6 +1,7 @@
 .add-button
   %h3 Accounts Overview
-  = link_to 'Add Account', new_account_path, class: 'btn btn-primary btn-sm'
+  = link_to 'Add Account', new_account_path, 'data-controller': 'turbo',
+                                             class: 'btn btn-primary btn-sm'
 
 -if @accounts.present?
   .bg-white.main-box-shadow.default-border-radius.p-3
