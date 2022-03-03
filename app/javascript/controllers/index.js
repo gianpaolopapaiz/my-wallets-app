@@ -4,12 +4,17 @@
 
 import { application } from "./application"
 
-// Rails Example
-import HelloController from "./hello_controller"
+import AccordionIconController from "./accordion_icon_controller.js"
+application.register("accordion-icon", AccordionIconController)
+
+import DynamicSubcategoryController from "./dynamic_subcategory_controller.js"
+application.register("dynamic-subcategory", DynamicSubcategoryController)
+
+import HelloController from "./hello_controller.js"
 application.register("hello", HelloController)
 
-import DynamicSubcategoryController from "./dynamic_subcategory_controller"
-application.register("dynamic_subcategory", DynamicSubcategoryController)
+import ModalController from "./modal_controller.js"
+application.register("modal", ModalController)
 
-import AccordionIconController from "./accordion_icon_controller"
-application.register("accordion_icon", AccordionIconController)
+import TurboController from "./turbo_controller.js"
+application.register("turbo", TurboController)
