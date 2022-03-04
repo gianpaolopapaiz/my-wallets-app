@@ -3,21 +3,21 @@
     display: none;
   }
 
-.form-wrapper{'data-controller':'dynamic_subcategory'}
-  .main-form
-    %h4 Transaction
-    = simple_form_for @simple_form_models, data: { turbo: false } do |f|
-      = f.input :date
-      = f.input :name
-      = f.input :description
-      = f.input :value
-      = f.association :category,
-                      collection: current_user.categories.order(:name),
-                      prompt: 'Choose a category'
-      #subcategory-field.b-3.select.optional.transaction_subcategory.hide-container{'data-transaction': @transaction.id}
-        %label.form-label.select.optional{for: 'transaction_subcategory_id'} Subcategory
-        %select.form-select.select.optional{name: 'transaction[subcategory_id]', id: 'transaction_subcategory_id'}
 
-      .form-buttons
-        = link_to 'Cancel', account_path(@account), class: 'btn btn-outline-primary'
-        = f.submit class: 'btn btn-primary'
+%div{'data-controller':'dynamic_subcategory'}
+  %h4 Transaction
+  = simple_form_for @simple_form_models do |f|
+    = f.input :date
+    = f.input :name
+    = f.input :description
+    = f.input :value
+    = f.association :category,
+                    collection: current_user.categories.order(:name),
+                    prompt: 'Choose a category'
+    #subcategory-field.b-3.select.optional.transaction_subcategory.hide-container{'data-transaction': @transaction.id}
+      %label.form-label.select.optional{for: 'transaction_subcategory_id'} Subcategory
+      %select.form-select.select.optional{name: 'transaction[subcategory_id]', id: 'transaction_subcategory_id'}
+
+    .form-buttons
+      = link_to 'Cancel', account_path(@account), class: 'btn btn-outline-primary'
+      = f.submit class: 'btn btn-primary'

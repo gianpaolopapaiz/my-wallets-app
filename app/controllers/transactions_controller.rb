@@ -32,7 +32,8 @@ class TransactionsController < ApplicationController
 
   def update
     if @transaction.update(transactions_params)
-      redirect_to account_path(@account)
+      redirect_to account_path(@account,
+                               notice: 'Transaction was successfully updated.')
     else
       render :edit
     end

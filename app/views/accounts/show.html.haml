@@ -11,9 +11,11 @@
         Add Transaction
       %ul.dropdown-menu{"aria-labelledby":  "dropdownMenuButton1"}
         %li
-          = link_to 'Manual Transaction', new_account_transaction_path(@account), class: 'dropdown-item'
+          = link_to 'Manual Transaction', new_account_transaction_path(@account), 'data-controller': 'turbo',
+                                                                                  class: 'dropdown-item'
         %li
-          = link_to 'Import From OFX', account_ofx_import_path(@account), class: 'dropdown-item'
+          = link_to 'Import From OFX', account_ofx_import_path(@account), 'data-controller': 'turbo',
+                                                                          class: 'dropdown-item'
 
 -if @account.transactions.present?
   %br
@@ -27,9 +29,11 @@
           Add Transaction
         %ul.dropdown-menu{"aria-labelledby":  "dropdownMenuButton1"}
           %li
-            = link_to 'Manual Transaction', new_account_transaction_path(@account), class: 'dropdown-item'
+            = link_to 'Manual Transaction', new_account_transaction_path(@account), 'data-controller': 'turbo',
+                                                                                    class: 'dropdown-item'
           %li
-            = link_to 'Import From OFX', account_ofx_import_path(@account), class: 'dropdown-item'
+            = link_to 'Import From OFX', account_ofx_import_path(@account), 'data-controller': 'turbo',
+                                                                            class: 'dropdown-item'
 
     %hr
     = render 'shared/accordion_filter', form_tag_path: account_path(@account),
