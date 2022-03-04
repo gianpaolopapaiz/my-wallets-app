@@ -44,14 +44,10 @@ class TransactionsController < ApplicationController
   end
 
   def destroy
-    if @transaction.destroy
-      redirect_to account_path(@account),
-                  status: :see_other
-    else
-      redirect_to account_path(@account),
-                  status: :see_other,
-                  alert: 'Something went wrong!'
-    end
+    @transaction.destroy
+    redirect_to account_path(@account),
+                alert: 'Transaction was successfully deleted.',
+                status: :see_other
   end
 
   private
