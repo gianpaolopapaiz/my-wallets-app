@@ -31,17 +31,19 @@ export default class extends Controller {
       }
     }
     const getCurrentTransaction = () => {
-      fetch('/transactions/' + currentTransaction + '.json').then((response) => {
-        return response.json();
-      }).then((data) => {
-        let transaction = data;
-        if (transaction.subcategory_id){
-          subcategoryOptionsSelector.value = transaction.subcategory_id;
-          subcategoryOptionsSelector.classList.add('is-valid');
-          subcategoryOptionsSelector.classList.add('form-control');
-          subcategoryOptionsSelector.classList.remove('form-select');
-        }
-      });
+      if (currentTransaction !== undefined) {
+        fetch('/transactions/' + currentTransaction + '.json').then((response) => {
+          return response.json();
+        }).then((data) => {
+          let transaction = data;
+          if (transaction.subcategory_id){
+            subcategoryOptionsSelector.value = transaction.subcategory_id;
+            subcategoryOptionsSelector.classList.add('is-valid');
+            subcategoryOptionsSelector.classList.add('form-control');
+            subcategoryOptionsSelector.classList.remove('form-select');
+          }
+        });
+      }
     };
     getSubcategories();
     getCurrentTransaction();
