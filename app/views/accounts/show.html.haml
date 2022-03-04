@@ -1,3 +1,23 @@
+:css
+  @media (max-width: 1000px) {
+    .wallet-lg {
+      display: none;
+    }
+    .wallet-sm {
+      display: none;
+    }
+  }
+
+  @media (min-width: 1001px) {
+    .wallet-md {
+      display: none;
+    }
+    .wallet-sm {
+      display: none;
+    }
+  }
+
+
 .add-button
   %h3
     = link_to 'Accounts', accounts_path(@account), class: 'text-decoration-none',
@@ -79,22 +99,3 @@
 
 - else
   %p (There are no transactions yet.)
-
-:css
-    @media (max-width: 1000px) {
-      .wallet-lg {
-        display: none;
-      }
-      .wallet-sm {
-        display: none;
-      }
-    }
-
-    @media (min-width: 1001px) {
-      .wallet-md {
-        display: none;
-      }
-      .wallet-sm {
-        display: none;
-      }
-    }
