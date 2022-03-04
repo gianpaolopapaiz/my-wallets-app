@@ -4,12 +4,6 @@ class TransactionsController < ApplicationController
   before_action :set_account, only: %i[new create]
   before_action :set_transaction_and_account, only: %i[show edit update destroy]
 
-  def new
-    @transaction = @account.transactions.new
-    authorize @transaction
-    @simple_form_models = [@account, @transaction]
-  end
-
   def show
     respond_to do |format|
       format.html
@@ -17,23 +11,33 @@ class TransactionsController < ApplicationController
     end
   end
 
+  def new
+    @transaction = @account.transactions.new
+    authorize @transaction
+    @simple_form_models = [@account, @transaction]
+    @submit_text = 'Create'
+  end
+
   def create
     @transaction = @account.transactions.new(transactions_params)
     if @transaction.save
-      redirect_to account_path(@account)
+      redirect_to account_path(@account),
+                  notice: 'Transaction was successfully created.'
+
     else
-      render :new
+      render :new, status: :see_other
     end
   end
 
   def edit
     @simple_form_models = [@transaction]
+    @submit_text = 'Update'
   end
 
   def update
     if @transaction.update(transactions_params)
-      redirect_to account_path(@account,
-                               notice: 'Transaction was successfully updated.')
+      redirect_to account_path(@account),
+                  notice: 'Transaction was successfully updated.'
     else
       render :edit
     end
@@ -41,10 +45,12 @@ class TransactionsController < ApplicationController
 
   def destroy
     if @transaction.destroy
-      redirect_to account_path(@account), status: :see_other
+      redirect_to account_path(@account),
+                  status: :see_other
     else
-      redirect_to account_path(@account), status: :see_other,
-                                          alert: 'Something went wrong!'
+      redirect_to account_path(@account),
+                  status: :see_other,
+                  alert: 'Something went wrong!'
     end
   end
 

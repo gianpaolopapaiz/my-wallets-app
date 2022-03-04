@@ -6,7 +6,7 @@
 
 %div{'data-controller':'dynamic_subcategory'}
   %h4 Transaction
-  = simple_form_for @simple_form_models do |f|
+  = simple_form_for simple_form_path do |f|
     = f.input :date
     = f.input :name
     = f.input :description
@@ -20,4 +20,4 @@
 
     .form-buttons
       = link_to 'Cancel', account_path(@account), class: 'btn btn-outline-primary'
-      = f.submit class: 'btn btn-primary'
+      = f.submit submit_text, class: 'btn btn-primary'

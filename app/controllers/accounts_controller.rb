@@ -24,8 +24,8 @@ class AccountsController < ApplicationController
     @account = current_user.accounts.new(accounts_params)
     authorize @account
     if @account.save
-      redirect_to(accounts_path,
-                  notice: 'Account was successfully created.')
+      redirect_to accounts_path,
+                  notice: 'Account was successfully created.'
     else
       render :new
     end
@@ -37,8 +37,8 @@ class AccountsController < ApplicationController
 
   def update
     if @account.update(accounts_params)
-      redirect_to(accounts_path,
-                  notice: 'Account was successfully updated.')
+      redirect_to accounts_path,
+                  notice: 'Account was successfully updated.'
     else
       render :edit
     end
@@ -46,7 +46,8 @@ class AccountsController < ApplicationController
 
   def destroy
     @account.destroy
-    redirect_to accounts_path
+    redirect_to accounts_path,
+                alert: 'Account was successfully deleted.'
   end
 
   def ofx_import; end
