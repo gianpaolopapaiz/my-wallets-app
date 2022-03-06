@@ -4,7 +4,7 @@
                                              class: 'btn btn-primary btn-sm'
 
 -if @accounts.present?
-  .bg-white.main-box-shadow.default-border-radius.p-3
+  .bg-white.main-box-shadow.default-border-radius.p-3.wallet-lg
     %table.table
       %thead
         %tr
@@ -23,5 +23,8 @@
             %th.text-right Total
             %th.text-right= number_to_currency(@accounts_total_balance)
             %td
+  %div.wallet-md
+    - @accounts.each do |account|
+      = render 'account_card', account: account
 - else
   %p (There are no accounts yet.)

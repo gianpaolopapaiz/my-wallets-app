@@ -5,7 +5,7 @@
   %td= transaction.category&.name || 'None'
   %td= transaction.subcategory&.name || 'None'
   %td= transaction.check_number || 'None'
-  %td.text-right{class: "#{transaction.value_class}"}
+  %td.text-right{class: "#{number_class(transaction.value)}"}
     = number_to_currency(transaction.value)
   %td.text-right
     = number_to_currency(transaction.account_balance)

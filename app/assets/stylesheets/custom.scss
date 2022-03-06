@@ -37,11 +37,11 @@ select, input, .btn, .accordion-header {
 @media (max-width: 400px) {
   .add-button {
     flex-direction: column;
-    .dropdown {
+    .dropdown, {
       width: 100%;
-      button, .btn {
-        width: 100%;
-      }
+    }
+    button, .btn {
+      width: 100%;
     }
   }
 }
@@ -74,4 +74,22 @@ select, input, .btn, .accordion-header {
 
 .text-right {
   text-align: right;
+}
+
+@media (max-width: 1000px) {
+  .wallet-lg {
+    display: none;
+  }
+  .wallet-sm {
+    display: none;
+  }
+}
+
+@media (min-width: 1001px) {
+  .wallet-md {
+    display: none;
+  }
+  .wallet-sm {
+    display: none;
+  }
 }

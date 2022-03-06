@@ -29,12 +29,4 @@ class Transaction < ApplicationRecord
     end
     balance
   end
-
-  def value_class
-    value >= 0 ? 'positive-number' : 'negative-number'
-  end
-
-  def account_balance_class
-    account_balance >= 0 ? 'positive-number' : 'negative-number'
-  end
 end

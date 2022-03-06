@@ -1,39 +1,4 @@
-:scss
-  .transaction-card {
-    display: flex;
-    align-items: stretch;
-    width: 100%;
-    min-height: 130px ;
-    column-gap: 10px;
-    .card-info {
-      flex-grow: 1;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      h6 {
-        font-weight: bold;
-      }
-      .description {
-        font-size: small;
-      }
-      span {
-        font-size: medium;
-      }
-    }
-    .card-value {
-      flex-grow: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: flex-end;
-      .value {
-        font-size: large;
-      }
-    }
-  }
-
-%div.bg-white.main-box-shadow.default-border-radius.p-3.my-3.transaction-card.default-border-radius.p-3
+%div.bg-white.main-box-shadow.default-border-radius.p-3.my-3.wallet-card.default-border-radius.p-3
   %div.card-info
     %h6= transaction.name
     %div.description
@@ -42,7 +7,7 @@
       = transaction.category&.name || 'None'
       = transaction.subcategory ? ': ' + transaction.subcategory.name : ''
   %div.card-value
-    %div.value{class: "#{transaction.value_class}"}
+    %div.value{class: "#{number_class(transaction.value)}"}
       = number_to_currency(transaction.value)
     %div{style: 'min-width:60px'}
       = link_to '', edit_transaction_path(transaction), 'data-controller': 'turbo',
