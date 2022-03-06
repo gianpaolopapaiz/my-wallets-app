@@ -1,7 +1,8 @@
 .add-button
   %h3
     = link_to 'Accounts', accounts_path(@account), class: 'text-decoration-none',
-                                                   title: 'View accounts overview'
+                                                   title: 'Accounts overview',
+                                                   style: 'color: green'
     %span= "/ #{@account.name}"
   - unless @account.transactions.present?
     .dropdown

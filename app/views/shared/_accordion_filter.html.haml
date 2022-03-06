@@ -13,17 +13,18 @@
                                                  "data-bs-parent": "#filterAccordion"}
       .accordion-body
         = form_tag form_tag_path, method: :get do
+          %div
           - if filter_date_range
             %div
               = label_tag 'Date Range:', nil, class: 'mt-2'
               %div.d-flex.justify-content-start.gap-3.flex-wrap
-                %div
+                %div.d-flex.justify-content-between{style: 'min-width: 200px'}
                   = label_tag 'Start:', nil, class: 'mt-2'
                   = date_field_tag 'start_date', @start_date, class: 'form-date form-select-sm'
-                %div
+                %div.d-flex.justify-content-between{style: 'min-width: 200px'}
                   = label_tag 'End:', nil, class: 'mt-2'
                   = date_field_tag 'end_date', @end_date, class: 'form-date form-select-sm'
-          %div.d-flex.justify-content-start.gap-3.flex-wrap
+          %div.d-flex.justify-content-start.flex-wrap{style: 'column-gap: 15px'}
             - if filter_account
               %div{style:'min-width: 250px'}
                 = label_tag 'Account:', nil, class: 'mt-3'

@@ -7,7 +7,7 @@
     = number_to_currency(account.balance)
   %td
     .action-column
-      = link_to '', account_path(account), title: 'View account transactions',
+      = link_to '', account_path(account), title: 'Account transactions',
                                            class: 'bi bi-file-text-fill'
       = link_to '', edit_account_path(account), 'data-controller': 'turbo',
                                                 class: 'bi bi-pencil-fill',
