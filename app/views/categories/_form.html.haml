@@ -1,9 +1,7 @@
-.form-wrapper
-  .main-form
-    %h4 Category
-    = simple_form_for @category, data: { turbo: false } do |f|
-      = f.input :name
-      = f.input :description
-      .form-buttons
-        = link_to 'Cancel', categories_path, class: 'btn btn-outline-primary'
-        = f.submit class: 'btn btn-primary'
+%h4 Category
+= simple_form_for @category do |f|
+  = f.input :name
+  = f.input :description
+  .form-buttons
+    = link_to 'Cancel', categories_path, class: 'btn btn-outline-primary'
+    = f.submit submit_text, class: 'btn btn-primary'

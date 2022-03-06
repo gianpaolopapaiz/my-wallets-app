@@ -1,6 +1,7 @@
 .add-button
   %h3 Categories
-  = link_to 'Add category', new_category_path, class: 'btn btn-primary btn-sm'
+  = link_to 'Add category', new_category_path, 'data-controller': 'turbo',
+                                               class: 'btn btn-primary btn-sm'
 
 -if @categories.present?
   .bg-white.main-box-shadow.default-border-radius.p-3
