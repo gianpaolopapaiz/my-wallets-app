@@ -16,7 +16,8 @@ class CategoriesController < ApplicationController
     @category = current_user.categories.new(categories_params)
     authorize @category
     if @category.save
-      redirect_to categories_path
+      redirect_to categories_path,
+                  notice: 'Category was successfully created.'
     else
       render :new
     end
@@ -26,15 +27,17 @@ class CategoriesController < ApplicationController
 
   def update
     if @category.update(categories_params)
-      redirect_to categories_path
+      redirect_to categories_path,
+                  notice: 'Category was successfully updated.'
     else
-      render :edit
+      render :new
     end
   end
 
   def destroy
     @category.destroy
-    redirect_to categories_path
+    redirect_to categories_path,
+                alert: 'Category was successfully deleted.'
   end
 
   private

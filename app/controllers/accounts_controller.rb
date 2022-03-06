@@ -17,7 +17,6 @@ class AccountsController < ApplicationController
   def new
     @account = current_user.accounts.new
     authorize @account
-    @submit_text = 'Create'
   end
 
   def create
@@ -31,9 +30,7 @@ class AccountsController < ApplicationController
     end
   end
 
-  def edit
-    @submit_text = 'Update'
-  end
+  def edit; end
 
   def update
     if @account.update(accounts_params)

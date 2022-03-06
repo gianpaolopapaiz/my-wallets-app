@@ -1,9 +1,9 @@
 %tr
   %th{ scope: 'row', style: 'color:green' }= account.name
   %td= account.description
-  %td.text-right{class: "#{account.initial_amount >= 0 ? 'positive-number' : 'negative-number'}"}
+  %td.text-right{class: "#{number_class(account.initial_amount)}"}
     = number_to_currency(account.initial_amount)
-  %td.text-right{class: "#{account.balance >= 0 ? 'positive-number' : 'negative-number'}"}
+  %td.text-right{class: "#{number_class(account.balance)}"}
     = number_to_currency(account.balance)
   %td
     .action-column

@@ -14,8 +14,6 @@ class TransactionsController < ApplicationController
   def new
     @transaction = @account.transactions.new
     authorize @transaction
-    @simple_form_models = [@account, @transaction]
-    @submit_text = 'Create'
   end
 
   def create
@@ -25,14 +23,11 @@ class TransactionsController < ApplicationController
                   notice: 'Transaction was successfully created.'
 
     else
-      render :new, status: :see_other
+      render :new
     end
   end
 
-  def edit
-    @simple_form_models = [@transaction]
-    @submit_text = 'Update'
-  end
+  def edit; end
 
   def update
     if @transaction.update(transactions_params)
