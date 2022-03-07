@@ -15,7 +15,8 @@
     = category.description
   %td
     .action-column
-      = link_to '', new_category_subcategory_path(category), class: 'bi bi-folder-fill text-decoration-none',
+      = link_to '', new_category_subcategory_path(category), 'data-controller': 'turbo',
+                                                             class: 'bi bi-folder-fill text-decoration-none',
                                                              title: 'Add Subcategory'
       = link_to '', edit_category_path(category), 'data-controller': 'turbo',
                                                   class: 'bi bi-pencil-fill',

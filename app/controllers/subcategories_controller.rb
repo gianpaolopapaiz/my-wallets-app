@@ -15,7 +15,6 @@ class SubcategoriesController < ApplicationController
   def new
     @subcategory = @category.subcategories.new
     authorize @subcategory
-    @simple_form_models = [@category, @subcategory]
   end
 
   def create
@@ -29,7 +28,6 @@ class SubcategoriesController < ApplicationController
 
   def edit
     @category = @subcategory.category
-    @simple_form_models = [@subcategory]
   end
 
   def update
